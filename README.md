@@ -2,6 +2,9 @@
 
 A small browser game inspired by the popular quiz show. Built with plain HTML, CSS and JavaScript — no build step required.
 
+<img width="1919" height="1079" alt="Screenshot 2026-03-01 130400" src="https://github.com/user-attachments/assets/224ed0c3-700c-40f8-b17b-322085b02d70" />
+
+
 ## Features
 
 - Clean responsive UI (see `style.css`).
