@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Who Wants to Be a Crorepati?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">₹</div>
+        <div class="brand-text">
+          <h1>Who Wants to Be a Crorepati?</h1>
+          <p class="sub">Climb the ladder. Win the crores.</p>
+        </div>
+      </div>
+
+      <div class="meta">
+        <div class="pill">
+          <span class="label">Safe Prize</span>
+          <span id="safePrize" class="value">₹0</span>
+        </div>
+        <div class="pill">
+          <span class="label">Current Prize</span>
+          <span id="currentPrize" class="value">₹1,000</span>
+        </div>
+        <div class="pill">
+          <span class="label">Best (Local)</span>
+          <span id="bestPrize" class="value">₹0</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="grid">
+      <!-- GAME PANEL -->
+      <section class="panel">
+        <div class="lifelines">
+          <button id="life5050" class="btn ghost" disabled>50-50</button>
+          <button id="lifeHint" class="btn ghost" disabled>Hint</button>
+          <button id="lifeSkip" class="btn ghost" disabled>Skip</button>
+          <button id="lifeTimer" class="btn ghost" disabled>Timer</button>
+          <button id="lifeAudience" class="btn ghost" disabled>Audience</button>
+          <button id="lifePhone" class="btn ghost" disabled>Phone</button>
+        </div>
+
+        <!-- Exists but never used since Timer is disabled -->
+        <div id="timerBox" class="timer hidden">
+          ⏱ Time left: <span id="timer">30</span>s
+        </div>
+
+        <div class="card question-card">
+          <div class="row">
+            <div class="badge" id="qNumber">Q1</div>
+            <div class="status" id="status">Pick an option</div>
+          </div>
+
+          <h2 id="questionText" class="question">Loading...</h2>
+          <div class="options" id="options"></div>
+
+          <div id="hintBox" class="hint hidden"></div>
+
+          <div class="footer-actions">
+            <button id="quitBtn" class="btn danger">Quit</button>
+            <button id="nextBtn" class="btn primary" disabled>Next</button>
+          </div>
+        </div>
+
+        <div class="card info">
+          <h3>Rules</h3>
+          <ul>
+            <li>Correct answer → move to next question.</li>
+            <li>Wrong answer → game ends.</li>
+            <li>Safe levels: Q5 and Q10 (you keep safe prize if you lose after that).</li>
+            <li>All lifelines are disabled in this version.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- LADDER PANEL -->
+      <aside class="panel">
+        <div class="card ladder-card">
+          <h3>Prize Ladder</h3>
+          <ol id="ladderList" class="ladder-list"></ol>
+          <p class="muted safe-note"><strong>Safe:</strong> Q5, Q10</p>
+        </div>
+
+        <div class="card result hidden" id="resultCard">
+          <h3 id="resultTitle">Game Over</h3>
+          <p id="resultText">—</p>
+          <div class="result-actions">
+            <button id="restartBtn" class="btn primary">Restart</button>
+            <button id="shareBtn" class="btn ghost">Copy Result</button>
+          </div>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
