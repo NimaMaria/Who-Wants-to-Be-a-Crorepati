@@ -44,15 +44,11 @@ When you modify `questions.js`, keep the same field names and array shape.
 - Safe levels: change `SAFE_LEVELS` in `script.js` (currently Q5 and Q10).
 - Lifelines are present in the UI but disabled by default; you can implement their behavior in `script.js`.
 
-## How the game works (short)
+## How the game works 
 
 - A set of questions is shuffled and the top N (matching `PRIZES.length`) are used.
 - Correct answer advances you; a wrong answer ends the game and you take the last safe prize.
 - Best (local) prize is stored in `localStorage` under `wcbc_best`.
-
-## Contributing
-
-Small changes are welcome: add questions, tweak styles, or implement lifelines. No build tools required.
 
 ## License
 
